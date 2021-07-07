@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: customer-service
+  cloud:
+    config:      uri: https://az-config-server.azurewebsites.net
