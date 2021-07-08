@@ -40,17 +40,10 @@ public class CustomerTopic {
   public ProducerFactory<String, Object> producerFactory() {
   
     Map<String, Object> config = new HashMap<>();
-<<<<<<< HEAD
-    
-    String host = hostName + ":" + port;
-    
-    System.out.println(host);
   
     config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "20.88.211.57:80");
-=======
       
     config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, host);
->>>>>>> branch 'main' of https://github.com/arodriguezcu/micro-customer.git
   
     config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
   
