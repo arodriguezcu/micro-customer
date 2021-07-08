@@ -20,11 +20,8 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 @Configuration
 public class CustomerTopic {
   
-  @Value("${kafka.server.hostname}")
-  private String hostName;
-  
-  @Value("${kafka.server.port}")
-  private String port;
+  @Value("${spring.kafka.bootstrap-servers}")
+  private String host;
     
   /** Crea una instancia de esta clase. */
   @Bean
@@ -43,12 +40,17 @@ public class CustomerTopic {
   public ProducerFactory<String, Object> producerFactory() {
   
     Map<String, Object> config = new HashMap<>();
+<<<<<<< HEAD
     
     String host = hostName + ":" + port;
     
     System.out.println(host);
   
     config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "20.88.211.57:80");
+=======
+      
+    config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, host);
+>>>>>>> branch 'main' of https://github.com/arodriguezcu/micro-customer.git
   
     config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
   
