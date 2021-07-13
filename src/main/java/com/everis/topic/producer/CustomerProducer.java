@@ -6,21 +6,21 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * Anotacion generica.
+ * Clase Producer del Customer.
  */
 @Component
 public class CustomerProducer {
-  
+
   @Autowired
   private KafkaTemplate<String, Object> kafkaTemplate;
-  
+
   private String createdCustomerTopic = "saved-customer-topic";
 
   /** Envia datos del customer al topico. */
-  public void sendSavedCustomerTopic(Customer data) {
-  
-    kafkaTemplate.send(createdCustomerTopic, data);
-  
+  public void sendSavedCustomerTopic(Customer customer) {
+
+    kafkaTemplate.send(createdCustomerTopic, customer);
+
   }
-  
+
 }

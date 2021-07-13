@@ -1,7 +1,6 @@
 package com.everis.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
- * Omitir campos que son nulos.
+ * Clase Customer.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Document(collection = "customer")
@@ -20,11 +19,10 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @NoArgsConstructor
 @Builder
 public class Customer {
-  
+
   @Id
   private String id;
 
-  @Size(min = 3)
   @Field(name = "name")
   private String name;
 
@@ -42,5 +40,5 @@ public class Customer {
 
   @Field(name = "phoneNumber")
   private String phoneNumber;
-  
+
 }
