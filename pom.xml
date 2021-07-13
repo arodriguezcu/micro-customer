@@ -13,9 +13,9 @@
   </parent>
   
   <groupId>com.everis</groupId>
-  <artifactId>customer-service</artifactId>
+  <artifactId>micro-customer</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>customer-service</name>
+  <name>micro-customer</name>
   <description>Demo project for Spring Boot</description>
   
   <properties>
